@@ -68,7 +68,11 @@ function App() {
     <div className="container">
       <section className="section">
         {activeClue !== null ? (
-          <ReactPlayer url={`https://www.youtube.com/watch?v=${activeClue.videoId}`} />
+          <ReactPlayer
+            width='100%'
+            height='auto'
+            url={`https://www.youtube.com/watch?v=${activeClue.videoId}`}
+          />
         ) : (
           <div><p>Nothing to see here</p></div>
         )}
