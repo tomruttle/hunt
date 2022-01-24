@@ -48,7 +48,7 @@ function App() {
       return;
     }
 
-    const isCorrectAnswer = activeClue.testAnswer(answer)
+    const isCorrectAnswer = activeClue.testAnswer(answer.trim().toLowerCase())
 
     if (isCorrectAnswer) {
       setAnswer('');
