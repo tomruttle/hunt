@@ -15,9 +15,14 @@ const answers: Answer[] = [
   {
     videoId: '',
     person: '',
-    question: '',
+    question: `
+This first one is silly, just a test nothing more
+To get your brain going before you head out the door
+The answer doesn't matter so let's make this quite brief
+Whose bust sits right next to your Georgia O'Keefe?
+    `,
     testAnswer(answer) {
-      return true;
+      return answer.includes('marx');
     }
   },
   {
@@ -122,19 +127,6 @@ Just tell me the brand of the logo on top?
     `,
     testAnswer(answer) {
       return answer === 'astra';
-    }
-  },
-  {
-    videoId: '',
-    person: '',
-    question: `
-A scavenger hunt is very bourgeois
-You should go buy a book (but don't travel too far)
-There's philosophy, history, literature and art!
-What other genre could we add to our cart?
-    `,
-    testAnswer(answer) {
-      return ['politik', 'politics'].includes(answer);
     }
   },
   {
@@ -292,6 +284,58 @@ How many people could it seat back then?
     `,
     testAnswer(answer) {
       return ['4000', '4 thousand', 'four thousand'].includes(answer);
+    }
+  },
+  {
+    videoId: '',
+    person: '',
+    question: `
+It's tough to find housing in the city of Berlin
+The big landlords are shit (just wait for Enteignen…)
+You're contractually free now, so your arse they can kiss
+There's a banner by their office for which public service?
+    `,
+    testAnswer(answer) {
+      return answer.includes('test') && answer.includes('center');
+    }
+  },
+  {
+    videoId: '',
+    person: '',
+    question: `
+You're so close to the end now, you deserve a drink
+There's a wine bar quite near you - the name's 'Ottorink'
+With your back to the entrance you'll notice a flag
+Hanging out of a window featuring which hashtag?
+    `,
+    testAnswer(answer) {
+      return answer.includes('dresdener15');
+    }
+  },
+  {
+    videoId: '',
+    person: '',
+    question: `
+To conclude this day Tom has made reservations
+At a nice restaurant (try to hide your elation)
+It's an old hospital next to Mariannenplatz
+Tell me its new name and then, well… that is that…
+    `,
+    testAnswer(answer) {
+      return answer === 'bethanien';
+    }
+  },
+  {
+    videoId: '',
+    person: '',
+    question: `
+You've come to the end of this scavenger hunt
+A yearlong wait for the next one you have to confront
+But for now rest your legs, eat and drink and have fun
+This annual tradition has only just begun
+    `,
+    testAnswer(answer) {
+      return true;
     }
   },
 ];
