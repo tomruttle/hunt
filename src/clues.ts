@@ -8,13 +8,14 @@ type Answer = {
 type Clue = Answer & {
   clueId: string;
   nextClue: string;
-  firstClue: boolean;
+  isFirstClue: boolean;
+  isLastClue: boolean;
 };
 
 const answers: Answer[] = [
   {
-    videoId: '',
-    person: '',
+    videoId: 'zhJrw4lV1E0',
+    person: 'Tom',
     question: `
 This first one is silly, just a test nothing more
 To get your brain going before you head out the door
@@ -26,8 +27,8 @@ Whose bust sits right next to your Georgia O'Keefe?
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'HVAGlqJnqU4',
+    person: 'William',
     question: `
 A scavenger hunt is very bourgeois
 You should go buy a book (but don't travel too far)
@@ -39,8 +40,8 @@ What other genre could we add to our cart?
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'mUCv2NHNuLA',
+    person: 'Britt Brons',
     question: `
 With your back to a curve that you might have signed
 Look carefully nearby and the answer you'll find
@@ -52,8 +53,8 @@ What's the latest time that these movers are available?
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'XQQhPOZz5fc',
+    person: 'Becky',
     question: `
 This Christmas was saved by overpriced meat
 (Though sexist decor should be flung with a “yeet!”)
@@ -66,7 +67,7 @@ His name's on your street and he died in what year?
   },
   {
     videoId: '',
-    person: '',
+    person: 'Lotte',
     question: `
 A film made your list of the best of this year
 And a lot of it's set within minutes of here
@@ -78,8 +79,8 @@ Which letter is gone from the sign on the arch?
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: '8EyIZ2PsPcU',
+    person: 'Sophie',
     question: `
 It's time to eat breakfast (if any remains)
 Each morning their coffee flows through your veins
@@ -91,8 +92,8 @@ Please tell me the caffeine-rich soda they sell
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'FoznvYkvQv4',
+    person: 'Sister',
     question: `
 When making a scavenger hunt for your bae
 An animal tax is the price that you'll pay
@@ -104,8 +105,8 @@ But tell me how many of their lockers are yellow
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'V8mjUgPIHfY',
+    person: 'Tom',
     question: `
 My favourite store is down the street
 A room-sized cushion can't be beat
@@ -117,8 +118,8 @@ You'll destroy all these creatures in the world with T
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'eIoa7KrT1IU',
+    person: 'Britt Boeddha',
     question: `
 The closest you've come to a pandemic live show
 Was dining nearby without quick tests - oh no!
@@ -143,7 +144,7 @@ What building's it attached to? (It's a seat of power)
     }
   },
   {
-    videoId: '',
+    videoId: 'WkK4tHUeJUs',
     person: 'Ed',
     question: `
 To my previous flat you must now zoom
@@ -156,8 +157,8 @@ It's a vaunted British institution
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'VajIOdxwR3k',
+    person: 'Suus',
     question: `
 While purchasing a Côtes du Rhône
 You spot something that lowers the tone
@@ -169,8 +170,8 @@ Tell me what the artist's called
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'O9Ys-YeCfzY',
+    person: 'Thirsa',
     question: `
 Now a short walk you've done often before
 To Tom's old place (still no name on the door…)
@@ -182,8 +183,8 @@ A grass-filled trailer, but who put it there?
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'WSRd_KMIR1U',
+    person: 'Farah',
     question: `
 There haven't been many films to catch
 But you went here to see the French Dispatch
@@ -195,8 +196,8 @@ Which organisation do they show love for?
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'GC3Tr2idz1M',
+    person: 'Mum',
     question: `
 For lunch we're having a real crowd-pleaser
 This town's best focaccia with chicken caesar
@@ -208,8 +209,8 @@ Tell me the colour of the two-headed man's eyes
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'H1RH0wDCETg',
+    person: 'Ros',
     question: `
 You so nearly lived here; you made the shortlist
 (it worked out for the best - a bullet you missed)
@@ -221,8 +222,8 @@ How much would you pay for a Haarschnitt lang?
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'c9uIoUQqmno',
+    person: 'Mei',
     question: `
 It's got fashion and monkeys and cups Japanese
 At the front door's installed many upside-down trees
@@ -235,7 +236,7 @@ The solution is (roughly) how many there are
     }
   },
   {
-    videoId: '',
+    videoId: 'MwYdt2ctWKc',
     person: 'Maria',
     question: `
 I showed you both a place unknown
@@ -248,8 +249,8 @@ The colour of what lives inside
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'g4fqADEhbZ4',
+    person: 'Tom',
     question: `
 You typically go here on date nights with Tom
 (you may as well pick up a box of Ceylon)
@@ -261,11 +262,11 @@ Just tell me what image resides on the crest
     }
   },
   {
-    videoId: '',
-    person: 'Amrei',
+    videoId: 'ibmLUiaPetE',
+    person: 'Tom',
     question: `
 To recall the next place, search through your memories
-It's where Tom & I work, so you should find it with ease
+It's the place that I work, so you should find it with ease
 It's a bit of a distance, so pay your train fare
 There's a door for 'events', what is written on there?
     `,
@@ -274,7 +275,7 @@ There's a door for 'events', what is written on there?
     }
   },
   {
-    videoId: '',
+    videoId: 'XMTLREFWLnE',
     person: 'Grace',
     question: `
 We escaped execution on my birthday (belated)
@@ -287,8 +288,8 @@ How many people could it seat back then?
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'weHAQnBDJEs',
+    person: 'Tom',
     question: `
 It's tough to find housing in the city of Berlin
 The big landlords are shit (just wait for Enteignen…)
@@ -300,8 +301,8 @@ There's a banner by their office for which public service?
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'r6HTfS3gGLE',
+    person: 'Thijs',
     question: `
 You're so close to the end now, you deserve a drink
 There's a wine bar quite near you - the name's 'Ottorink'
@@ -313,8 +314,8 @@ Hanging out of a window featuring which hashtag?
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: 'VMFciFDcs8U',
+    person: 'Tom',
     question: `
 To conclude this day Tom has made reservations
 At a nice restaurant (try to hide your elation)
@@ -326,8 +327,8 @@ Tell me its new name and then, well… that is that…
     }
   },
   {
-    videoId: '',
-    person: '',
+    videoId: '1k26BfMlM5c',
+    person: 'Tom',
     question: `
 You've come to the end of this scavenger hunt
 A yearlong wait for the next one you have to confront
@@ -345,11 +346,14 @@ export const clues: Record<string, Clue> = (function generateClues() {
      ...acc,
      [answer.videoId]: {
        ...answer,
-       firstClue: index === 0,
+       isFirstClue: index === 0,
+       isLastClue: index === answers.length - 1,
        clueId: answer.videoId,
        nextClue: answers[index + 1]?.videoId ?? ''
      }
    }), {})
 })();
 
-export const defaultClueId = Object.values(clues).find(({ firstClue }) => firstClue)?.clueId || '';
+export const defaultClueId = Object.values(clues).find(({ isFirstClue }) => isFirstClue)?.clueId || '';
+
+export const finalClueId = Object.values(clues).find(({ isLastClue }) => isLastClue)?.clueId || '';

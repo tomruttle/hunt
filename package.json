@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@types/node": "^16.11.21",
     "@types/object-hash": "^2.2.1",
     "@types/react": "^17.0.38",
