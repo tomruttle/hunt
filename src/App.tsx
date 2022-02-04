@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ReactPlayer from "react-player"
 import { clues, defaultClueId, finalClueId } from './clues';
 
-import '@fortawesome/fontawesome-free';
 import 'bulma/css/bulma.min.css';
 
 const CLUE_ID_QUERY_PARAM = 'clue-id';
@@ -26,6 +25,7 @@ function updateQuery(key: string, val: string) {
 function App() {
   const [clueId, setClueId] = useState(getKey(CLUE_ID_QUERY_PARAM, defaultClueId));
   const [answer, setAnswer] = useState('');
+  const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [hideClue, setHideClue] = useState(true);
 
@@ -43,7 +43,7 @@ function App() {
     }
   }
 
-  const onSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (activeClue === null) {
@@ -53,10 +53,22 @@ function App() {
     const isCorrectAnswer = activeClue.testAnswer(answer.trim().toLowerCase())
 
     if (isCorrectAnswer) {
+      setSuccess(true);
+      
+      await new Promise((resolve) => setTimeout(resolve, 200));
+
+      setSuccess(false);
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
       setAnswer('');
 
       if (error) {
         setError(false);
+      }
+
+      if (hideClue === false) {
+        setHideClue(false);
       }
 
       setClueId(activeClue.nextClue);
@@ -82,14 +94,9 @@ function App() {
         <section className="section">
           <div className="container">
             <div className="card">
-              <header className="card-header">
+              <button onClick={() => setHideClue(!hideClue)} className="card-header" style={{ width: '100%', border: 0 }}>
                 <p className="card-header-title">{hideClue ? 'Show' : 'Hide'} Clue</p>
-                <button onClick={() => setHideClue(!hideClue)} className="card-header-icon">
-                <span className="icon">
-                  <i className="fas fa-home"></i>
-                </span>
-                </button>
-              </header>
+              </button>
 
               <div className={`card-content${hideClue ? ' is-hidden' : ''}`}>
                 <div className="content">
@@ -110,7 +117,7 @@ function App() {
                   type="text"
                   name="answer"
                   placeholder="Answer..."
-                  className={`input is-large${error ? ' is-danger' : ''}`}
+                  className={`input is-large${error ? ' is-danger' : ''}${success ? ' is-primary' : ''}`}
                   value={answer}
                   onChange={onChangeInput}
                 />
