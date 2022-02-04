@@ -58,21 +58,13 @@ function App() {
       await new Promise((resolve) => setTimeout(resolve, 200));
 
       setSuccess(false);
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
       setAnswer('');
-
-      if (error) {
-        setError(false);
-      }
-
-      if (hideClue === false) {
-        setHideClue(false);
-      }
-
+      setError(false);
+      setHideClue(true);
       setClueId(activeClue.nextClue);
       updateQuery(CLUE_ID_QUERY_PARAM, activeClue.nextClue);
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (error === false) {
       setError(true);
     }
